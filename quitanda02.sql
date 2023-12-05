@@ -113,9 +113,23 @@ SELECT * FROM tb_produtos ORDER BY nome DESC;
 -- o nome como primeiro parametro, possui maior prioridade de ordanaçao 
 SELECT * FROM tb_produtos ORDER BY nome, preco ASC;
 
--- operador in criterio especifico
+-- operador in criterio especifico somente esses numeros
 SELECT * FROM tb_produtos WHERE preco IN (5.00, 10.00, 15.00);
 
--- procurar entre um valor em especifico inicial e outro valor final
+-- procurar entre um valor em especifico inicial e outro valor final DENTRO DO INTERVALO
 SELECT * FROM tb_produtos WHERE preco BETWEEN 5.00 AND 15.00;
 
+SELECT * FROM tb_produtos
+WHERE preco IN (5.00, 10.00, 15.00)
+OR quantidade IN(1000, 1500, 2000);
+
+SELECT * FROM tb_produtos WHERE preco BETWEEN 5.00 AND 15.00 ORDER BY preco ASC;
+
+-- mostra aonde estiver o ra tanto no começo, meio ou final
+SELECT * FROM tb_produtos WHERE nome LIKE "%ra%";
+
+-- produtos que começam com ra
+SELECT * FROM tb_produtos WHERE nome LIKE "ra%";
+
+-- produtos que terminam com ra
+SELECT * FROM tb_produtos WHERE nome LIKE "%ra";
