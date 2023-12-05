@@ -175,3 +175,11 @@ ON tb_produtos.categoria_id = tb_categorias.id;
 SELECT nome, preco, quantidade, tb_categorias.descricao
 FROM tb_produtos RIGHT JOIN tb_categorias 
 ON tb_produtos.categoria_id = tb_categorias.id;
+
+-- As vezes precisamos pesquisar dados e agrupar estas informações por algum critério, como por exemplo encontra a média de preço dos produtos, agrupados por categoria, ou seja, a média do preço por categoria. Para criarmos esta consulta, utilizaremos a clausula GROUP BY, onde indicaremos por qual atributo queremos agrupar os dados.
+-- SELECT com GROUP BY
+
+SELECT tb_categorias.descricao, AVG(Preco) as 'Preço Médio'
+FROM tb_produtos 
+INNER JOIN tb_categorias ON tb_categorias.Id = tb_produtos.categoria_id 
+GROUP BY tb_categorias.descricao;
