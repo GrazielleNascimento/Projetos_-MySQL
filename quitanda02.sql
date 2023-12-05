@@ -158,3 +158,16 @@ SELECT nome, preco, quantidade, tb_categorias.descricao
 FROM tb_produtos INNER JOIN tb_categorias 
 ON tb_produtos.categoria_id = tb_categorias.id; -- comparacao se tem uma relacao entre essas tabelas e seus ids
  
+ -- LEFT JOIN a tabela esquerda sempre sera a dependente a estrangeira
+ -- traz tds produtos ou seja td a tabela produto por estar a esquerda
+ -- traz tds itens da tabela produto dependente mesmo q nao tenha relacionamento
+ -- td q esta atras da palavra left vai ser mostrado
+SELECT nome, preco, quantidade, tb_categorias.descricao
+
+FROM tb_produtos LEFT JOIN tb_categorias 
+
+ON tb_produtos.categoria_id = tb_categorias.id;
+
+-- RIGHT JOIN
+-- mesmo q uma categoria n esteja atribuida a um roduto
+
