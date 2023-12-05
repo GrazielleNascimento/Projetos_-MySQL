@@ -103,3 +103,6 @@ VALUES("Sacola Verde", 1118, 0.50);
 
 -- Visualiza todos os dados da tabela tb_produtos
 SELECT * FROM tb_produtos;
+
+-- Ordenando os registros em odem alfabetica
+SELECT * FROM tb_produtos ORDER BY nome ASC;
