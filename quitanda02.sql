@@ -168,6 +168,10 @@ FROM tb_produtos LEFT JOIN tb_categorias
 
 ON tb_produtos.categoria_id = tb_categorias.id;
 
--- RIGHT JOIN
+-- RIGHT JOIN 
 -- mesmo q uma categoria n esteja atribuida a um roduto
+-- a direita 
 
+SELECT nome, preco, quantidade, tb_categorias.descricao
+FROM tb_produtos RIGHT JOIN tb_categorias 
+ON tb_produtos.categoria_id = tb_categorias.id;
