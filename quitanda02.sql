@@ -133,3 +133,28 @@ SELECT * FROM tb_produtos WHERE nome LIKE "ra%";
 
 -- produtos que terminam com ra
 SELECT * FROM tb_produtos WHERE nome LIKE "%ra";
+
+ -- insert into tb_produtos(nome, preco, marca_id) values ("calca", 79.80, 99); da erro pois nao existe marca_id 99
+ 
+ -- comandos de juncao (INNER join / RIGHT join / LEFT join)
+
+-- duas juncoes em duas consultas
+ SELECT * FROM tb_produtos;
+ SELECT * FROM tb_categorias;
+ 
+ -- uma consulta apenas com as duas tabelas
+ 
+ -- relacionamento interligado produto e categoria interligados INNER JOIN
+ SELECT nome, preco, quantidade, tb_categorias.descricao -- listar em uma outra coluna a descricao de categoria para o produto mas a descricao esta na tabela categoria
+
+FROM tb_produtos 
+
+INNER JOIN tb_categorias 
+
+ON tb_produtos.categoriaid = tb_categorias.id; -- identifica os campos se existe um relacioanemento entre eles devem ter lago em comum no caso o id
+ -- on fica como onde, procura
+ 
+SELECT nome, preco, quantidade, tb_categorias.descricao
+FROM tb_produtos INNER JOIN tb_categorias 
+ON tb_produtos.categoria_id = tb_categorias.id; -- comparacao se tem uma relacao entre essas tabelas e seus ids
+ 
