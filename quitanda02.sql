@@ -106,3 +106,16 @@ SELECT * FROM tb_produtos;
 
 -- Ordenando os registros em odem alfabetica
 SELECT * FROM tb_produtos ORDER BY nome ASC;
+
+-- inverso
+SELECT * FROM tb_produtos ORDER BY nome DESC;
+
+-- o nome como primeiro parametro, possui maior prioridade de ordanaçao 
+SELECT * FROM tb_produtos ORDER BY nome, preco ASC;
+
+-- operador in criterio especifico
+SELECT * FROM tb_produtos WHERE preco IN (5.00, 10.00, 15.00);
+
+-- procurar entre um valor em especifico inicial e outro valor final
+SELECT * FROM tb_produtos WHERE preco BETWEEN 5.00 AND 15.00;
+
